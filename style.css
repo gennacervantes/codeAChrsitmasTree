@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#canvas {
+    margin: auto;
+    background-color: #7CBAEF;
+    width: 1920px;
+    height: 1080px;
+    display: grid;
+    grid-template-columns: repeat(96, 15px);
+    grid-template-rows: repeat(54, 15px);
+}
+
+.pixel {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 0.1px solid black;
+}
+
+
+/* fallign snow */
+
+.snow-canvas{
+    height: 100vh;
+    width: 100%;
+
+}
+
+.snow, .snow:after, .snow::before{
+    content: "";
+    position: absolute;
+    top: -650px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: 
+    radial-gradient(ellipse at 100px 50px, #fff, transparent 20px),
+    radial-gradient(ellipse at 200px 150px, #fff, transparent 20px),
+    radial-gradient(ellipse at 300px 250px, #fff, transparent 20px),
+    radial-gradient(ellipse at 400px 350px, #fff, transparent 20px),
+    radial-gradient(ellipse at 500px 100px, #fff, transparent 20px),
+    radial-gradient(ellipse at 50px 200px, #fff, transparent 20px),
+    radial-gradient(ellipse at 150px 300px, #fff, transparent 20px),
+    radial-gradient(ellipse at 250px 400px, #fff, transparent 20px),
+    radial-gradient(ellipse at 350px 500px, #fff, transparent 20px);
+    background-size: 650px 650px;
+
+    animation: snowAnim 4s linear;
+    animation-iteration-count: infinite;
+}
+
+.snow:after{
+    margin-left: -250px;
+    opacity: 0.5;
+    filter: blur(2px);
+}
+.snow::before{
+    margin-left: -350px;
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+@keyframes snowAnim{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(650px);
+    }
+}
+
+#snow{
+    background-color: white;
+}
+
+.red{
+    animation: blink-animation-red 11s infinite;
+}
+
+@keyframes blink-animation-red {
+    0%, 50%, 100% {
+        background-color: #CC322E;
+    }
+    25%, 75% {
+        background-color: #ff918d;
+    }
+}
+
+.blue{
+    animation: blink-animation-blue 5s infinite;
+}
+
+@keyframes blink-animation-blue {
+    0%, 50%, 100% {
+        background-color: #2321CB;
+    }
+    25%, 75% {
+        background-color: #abaafd;
+    }
+}
+
+.yellow{
+    animation: blink-animation-yellow 1s infinite;
+}
+
+@keyframes blink-animation-yellow {
+    0%, 50%, 100% {
+        background-color: #F1E25A;
+    }
+    25%, 75% {
+        background-color: #D5D9BB;
+    }
+}
